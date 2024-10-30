@@ -72,7 +72,6 @@ Step14. click on debug and simulate using simulation
 ## STM 32 CUBE PROGRAM :
 ```c
 #include "main.h"
-
 TIM_HandleTypeDef htim2;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -86,7 +85,6 @@ int main(void)
 HAL_TIM_Base_Start(&htim2);
 HAL_TIM_PWM_Init(&htim2);
 HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
-
   while (1)
   {
 
@@ -97,7 +95,6 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-
   __HAL_RCC_PWR_CLK_ENABLE();
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
@@ -118,7 +115,6 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
     Error_Handler();
@@ -126,7 +122,6 @@ void SystemClock_Config(void)
 }
 static void MX_TIM2_Init(void)
 {
-
   TIM_MasterConfigTypeDef sMasterConfig = {0};
   TIM_OC_InitTypeDef sConfigOC = {0};
 
@@ -160,11 +155,9 @@ static void MX_TIM2_Init(void)
 
 static void MX_GPIO_Init(void)
 {
-
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
-
 }
 
 void Error_Handler(void)
@@ -174,7 +167,6 @@ void Error_Handler(void)
   {
   }
 }
-
 #ifdef  USE_FULL_ASSERT
 void assert_failed(uint8_t *file, uint32_t line)
 {
@@ -183,7 +175,7 @@ void assert_failed(uint8_t *file, uint32_t line)
 ```
 
 ## Output screen shots of proteus  :
-<img src="https://github.com/user-attachments/assets/dc75ef00-dd26-44a0-87fd-6833f6d23fcb" width=50%>
+<img src="https://github.com/user-attachments/assets/dc75ef00-dd26-44a0-87fd-6833f6d23fcb" width=40%>
 <img src="https://github.com/user-attachments/assets/8a7e924d-880b-4b1a-b442-c9149c3c66cb" width=40%>
 <img src="https://github.com/user-attachments/assets/b3dc3ec0-7d0a-4cfa-b6c1-4ffe74fc8eea" width=40%>
 <img src="https://github.com/user-attachments/assets/9d83b084-f45f-4635-a566-2c8e93bfe6db" width=40%>
